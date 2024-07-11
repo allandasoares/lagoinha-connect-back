@@ -12,7 +12,7 @@ export class User {
   email: string;
 
   @Prop()
-  departamento: Departamento[];
+  departamentos?: Departamento[];
 }
 
 export const UsersSchema = SchemaFactory.createForClass(User);
