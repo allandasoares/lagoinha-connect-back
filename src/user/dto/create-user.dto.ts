@@ -1,4 +1,10 @@
-import { IsArray, IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsEmail,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { Departamento } from 'src/departamento/schemas/departamento.schema';
 
 export class CreateUserDto {
@@ -11,5 +17,6 @@ export class CreateUserDto {
   email: string;
 
   @IsArray()
-  departamento: Departamento[];
+  @IsOptional()
+  departamentos?: Departamento[];
 }
