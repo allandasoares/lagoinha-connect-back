@@ -16,6 +16,10 @@ export class UpdateUserDto {
   @IsNotEmpty()
   email: string;
 
+  @IsNotEmpty()
+  @IsString()
+  senha: string;
+
   @IsArray()
   @IsOptional()
   departamentos?: Departamento[];
