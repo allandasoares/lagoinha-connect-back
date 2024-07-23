@@ -8,11 +8,14 @@ export class User {
   @Prop()
   nome: string;
 
-  @Prop()
+  @Prop({ unique: [true, 'Email já cadastrado'] })
   email: string;
+
+  @Prop()
+  senha: string;
 
   @Prop()
   departamentos?: Departamento[];
 }
 
-export const UsersSchema = SchemaFactory.createForClass(User);
+export const UserSchema = SchemaFactory.createForClass(User);
